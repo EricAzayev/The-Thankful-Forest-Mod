@@ -82,7 +82,7 @@ public class TheThankfulMod
     {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event){
-
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.FALL_LEAVES.get(), RenderType.cutout());
         }
     }
 }
