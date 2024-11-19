@@ -20,7 +20,12 @@ public class ModBlocks {
         DeferredRegister.create(ForgeRegistries.BLOCKS, TheThankfulMod.MOD_ID);
     
     public static final RegistryObject<Block> FALL_LEAVES = registerBlock("fall_leaves",
-            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)));
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)
+                    .strength(0.2f)
+                    .noOcclusion() // Allows light to pass through
+                    .isSuffocating((state, world, pos) -> false) // Prevent suffocation
+                    .isViewBlocking((state, world, pos) -> false) // Prevent blocking the view
+            ));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
