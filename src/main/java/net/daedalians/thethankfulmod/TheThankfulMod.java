@@ -63,6 +63,10 @@ public class TheThankfulMod
             event.accept(ModItems.FALL_SAPLING);
             event.accept(ModItems.SAPPHIRE);
         }
+        if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS)
+        {
+            event.accept(ModBlocks.FALL_LEAVES);
+        }
 
     }
 
