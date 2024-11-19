@@ -18,7 +18,8 @@ public class ModCreativeModTabs {
                     .title(Component.translatable("creativetab.autumn_tab"))
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(ModItems.FALL_SAPLING.get());
-                        pOutput.accept(ModItems.SAPPHIRE.get());
+                        pOutput.accept(ModBlocks.FALL_LEAVES.get());
+                        //pOutput.accept(ModItems.SAPPHIRE.get());
                     })
                     .build());
 
