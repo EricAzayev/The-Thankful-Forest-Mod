@@ -2,11 +2,16 @@ package net.daedalians.thethankfulmod;
 
 //import com.example.examplemod.Config;
 import com.mojang.logging.LogUtils;
+//<<<<<<< HEAD
 import net.daedalians.thethankfulmod.block.ModBlocks;
 import net.daedalians.thethankfulmod.item.ModCreativeModTabs;
 import net.daedalians.thethankfulmod.item.ModItems;
+//=======
+import net.daedalians.thethankfulmod.entity.client.TurkeyRenderer;
+//>>>>>>> d33797dcf909eb64f45956bae3ef9f6fbcb6ed30
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -38,6 +43,8 @@ public class TheThankfulMod
         ModItems.register(modEventBus);
 
         ModBlocks.register(modEventBus);
+
+        ModEntities.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -85,6 +92,7 @@ public class TheThankfulMod
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event){
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.FALL_LEAVES.get(), RenderType.cutout());
+            EntityRenderers.register(ModEntities.TURKEY.get(), TurkeyRenderer::new);
         }
     }
 }
