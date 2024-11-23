@@ -1,5 +1,7 @@
-package net.daedalians.thethankfulmod;
+package net.daedalians.thethankfulmod.item;
 
+import net.daedalians.thethankfulmod.TheThankfulMod;
+import net.daedalians.thethankfulmod.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;

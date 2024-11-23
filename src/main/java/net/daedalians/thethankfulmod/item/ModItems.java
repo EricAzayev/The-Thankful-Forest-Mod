@@ -1,5 +1,6 @@
-package net.daedalians.thethankfulmod;
+package net.daedalians.thethankfulmod.item;
 
+import net.daedalians.thethankfulmod.TheThankfulMod;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
