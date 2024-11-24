@@ -92,6 +92,7 @@ public class TheThankfulMod
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event){
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.FALL_LEAVES.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.SCATTERED_LEAVES.get(), RenderType.cutout());
             EntityRenderers.register(ModEntities.TURKEY.get(), TurkeyRenderer::new);
         }
     }
