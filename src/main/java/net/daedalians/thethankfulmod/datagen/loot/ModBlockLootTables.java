@@ -32,6 +32,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     protected void generate() { //What does each block drop?
 //        this.dropSelf(ModBlocks.FALL_LEAVES.get()); //Leaf blocks will drop themselves.
         this.dropSelf(ModBlocks.FALL_SAPLING.get());
+        this.dropSelf(ModBlocks.FALL_GRASS.get());
 
 
 

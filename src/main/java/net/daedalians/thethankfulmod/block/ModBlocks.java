@@ -42,6 +42,7 @@ public class ModBlocks {
                     .isSuffocating((state, world, pos) -> false) // Prevent suffocation
                     .isViewBlocking((state, world, pos) -> false) // Prevent blocking the view
                     .noCollission()
+                    .noLootTable()
             ));
 
     //class methods
