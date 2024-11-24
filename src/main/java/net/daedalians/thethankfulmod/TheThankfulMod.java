@@ -75,6 +75,8 @@ public class TheThankfulMod
         if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS)
         {
             event.accept(ModBlocks.FALL_LEAVES);
+            event.accept(ModBlocks.FALL_GRASS);
+            event.accept(ModBlocks.SCATTERED_LEAVES);
         }
 
     }
