@@ -28,9 +28,21 @@ public class ModBlocks {
                     .isSuffocating((state, world, pos) -> false) // Prevent suffocation
                     .isViewBlocking((state, world, pos) -> false) // Prevent blocking the view
             ));
+
     public static final RegistryObject<Block> FALL_SAPLING = registerBlock("fall_sapling",
             () -> new SaplingBlock(TreeGrower.OAK, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING))); //return and implement Fall_OAK
 
+    public static final RegistryObject<Block> FALL_GRASS = registerBlock("fall_grass",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.GRASS_BLOCK)));
+
+    public static final RegistryObject<Block> SCATTERED_LEAVES = registerBlock("scattered_leaves",
+            () -> new FlatBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)
+                    .strength(0.2f)
+                    .noOcclusion() // Allows light to pass through
+                    .isSuffocating((state, world, pos) -> false) // Prevent suffocation
+                    .isViewBlocking((state, world, pos) -> false) // Prevent blocking the view
+                    .noCollission()
+            ));
 
     //class methods
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
