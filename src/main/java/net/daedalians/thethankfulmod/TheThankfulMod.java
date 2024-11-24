@@ -41,7 +41,6 @@ public class TheThankfulMod
         ModCreativeModTabs.register(modEventBus);
 
         ModItems.register(modEventBus);
-
         ModBlocks.register(modEventBus);
 
         ModEntities.register(modEventBus);
@@ -69,7 +68,7 @@ public class TheThankfulMod
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event){
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            event.accept(ModItems.FALL_SAPLING);
+            //event.accept(ModItems.FALL_SAPLING);
             event.accept(ModItems.SAPPHIRE);
         }
         if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS)

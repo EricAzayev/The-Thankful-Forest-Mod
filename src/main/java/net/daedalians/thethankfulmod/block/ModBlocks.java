@@ -2,10 +2,13 @@ package net.daedalians.thethankfulmod.block;
 
 import net.daedalians.thethankfulmod.item.ModItems;
 import net.daedalians.thethankfulmod.TheThankfulMod;
+import net.daedalians.thethankfulmod.worldgen.tree.FallTreeGrower;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SaplingBlock;
+import net.minecraft.world.level.block.grower.TreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -25,12 +28,17 @@ public class ModBlocks {
                     .isSuffocating((state, world, pos) -> false) // Prevent suffocation
                     .isViewBlocking((state, world, pos) -> false) // Prevent blocking the view
             ));
+    public static final RegistryObject<Block> FALL_SAPLING = registerBlock("fall_sapling",
+            () -> new SaplingBlock(TreeGrower.OAK, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING))); //return and implement Fall_OAK
 
+
+    //class methods
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);
         return toReturn;
     }
+
 
 //    public static final RegistryObject<Block> SAPPHIRE_BLOCK = registerBlock("sapphire_block",
 //            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.AMETHYST)));

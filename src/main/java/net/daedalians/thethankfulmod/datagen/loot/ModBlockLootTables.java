@@ -14,6 +14,7 @@ import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.Set;
@@ -29,7 +30,13 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
     @Override  //If you are here, it is likely due to an error in the ModBlocks class. Either write this.dropSelf() or contact Eric
     protected void generate() { //What does each block drop?
-        this.dropSelf(ModBlocks.FALL_LEAVES.get()); //Leaf blocks will drop themselves.
+//        this.dropSelf(ModBlocks.FALL_LEAVES.get()); //Leaf blocks will drop themselves.
+        this.dropSelf(ModBlocks.FALL_SAPLING.get());
+
+
+
+        this.add(ModBlocks.FALL_LEAVES.get(), block ->
+                createLeavesDrops(block, ModBlocks.FALL_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
         //this.dropSelf(ModBlocks.MAPLE_LOG.get());
 

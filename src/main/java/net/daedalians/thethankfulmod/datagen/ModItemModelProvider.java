@@ -9,6 +9,8 @@ import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
+import net.minecraft.world.level.block.Block;
+import net.daedalians.thethankfulmod.block.ModBlocks;
 
 
 public class ModItemModelProvider extends ItemModelProvider {
@@ -19,7 +21,8 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        simpleItem(ModItems.FALL_SAPLING);
+        //simpleItem(ModItems.FALL_SAPLING); if just item
+        saplingItem(ModBlocks.FALL_SAPLING);
 
     }
 
@@ -27,5 +30,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(TheThankfulMod.MOD_ID,"item/" + item.getId().getPath()));
+    }
+
+    private ItemModelBuilder saplingItem(RegistryObject<Block> item) {
+        return withExistingParent(item.getId().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(TheThankfulMod.MOD_ID,"block/" + item.getId().getPath()));
     }
 }
