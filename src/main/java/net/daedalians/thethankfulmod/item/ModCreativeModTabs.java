@@ -21,6 +21,8 @@ public class ModCreativeModTabs {
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(ModItems.FALL_SAPLING.get());
                         pOutput.accept(ModBlocks.FALL_LEAVES.get());
+                        pOutput.accept(ModBlocks.FALL_GRASS.get());
+                        pOutput.accept(ModBlocks.SCATTERED_LEAVES.get());
                         //pOutput.accept(ModItems.SAPPHIRE.get());
                     })
                     .build());
