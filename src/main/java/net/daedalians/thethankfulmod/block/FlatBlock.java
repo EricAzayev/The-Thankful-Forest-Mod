@@ -1,4 +1,4 @@
-package net.daedalians.thethankfulmod;
+package net.daedalians.thethankfulmod.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
